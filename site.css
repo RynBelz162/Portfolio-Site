@@ -1,0 +1,21 @@
+body {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.nav-bar {
+    list-style-type: none;
+}
+
+.nav-bar>li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.nav-bar>li:first-child {
+    margin: 0;
+}
+
+.nav-bar>li:last-child {
+    float: right;
+    margin-right: 10px;
+}
