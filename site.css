@@ -4,18 +4,40 @@ body {
 
 .nav-bar {
     list-style-type: none;
+    padding-left: 0;
+    margin-left: 30px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: start;
 }
 
-.nav-bar>li {
-    display: inline;
-    margin-left: 20px;
+.nav-bar li {
+    margin-right: 30px;
 }
 
-.nav-bar>li:first-child {
-    margin: 0;
+.nav-bar li:last-child {
+    margin-left: auto;
 }
 
-.nav-bar>li:last-child {
-    float: right;
-    margin-right: 10px;
+.nav-bar a {
+    color: #000;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.nav-bar a:hover {
+    border-bottom: 1px solid #000;
+}
+
+.nav-bar a:visited {
+    color: #000;
+    text-decoration: none;
+}
+
+.header-split {
+    margin: 0 20px 0 20px;
+}
+
+iframe {
+    margin: 0 20px;
 }
