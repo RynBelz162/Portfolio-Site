@@ -36,6 +36,10 @@ html, body {
     justify-content: center;
 }
 
+.align-center {
+    align-items: center;
+}
+
 .responsive-container {
     display: flex;
     flex-direction: row;
@@ -77,6 +81,10 @@ li {
     right: 0px;
     padding-bottom: 30px;
     background-color: var(--off-white);
+
+    @media screen and (max-width: 850px) {
+        position: inherit;
+    }
 }
 
 /* text */
