@@ -1,157 +1,54 @@
 :root {
-    --off-white: #ECE3CE;
-    --primary-light: #739072;
-    --primary: #4F6F52;
-    --primary-dark: #3A4D39;
+  --off-white: #ECE3CE;
+  --grid-base: #E6DDC6;
+  --ink: #3A4D39;
+  --muted: #47624A;
 }
 
-html, body {
-    font-family: "Roboto Mono", monospace;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    margin: 0;
-    height: 100%;
-    background-color: var(--off-white);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-/* containers */
-.flex {
-    display: flex;
+html,
+body {
+  margin: 0;
 }
 
-.col {
-    flex-direction: column;
+body {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  color: var(--ink);
+  border-top: 3px solid var(--ink);
+  -webkit-font-smoothing: antialiased;
 }
 
-.row {
-    flex-direction: row;
+a {
+  -webkit-tap-highlight-color: transparent;
 }
 
-.start {
-    justify-content: start;
+/* Scroll reveal — progressive enhancement.
+   Content is fully visible by default; the animation only applies in
+   browsers that support scroll-driven timelines, so nothing is ever
+   left hidden (Chrome/Edge animate; Firefox/Safari show static). */
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-.center {
-    justify-content: center;
-}
-
-.align-center {
-    align-items: center;
-}
-
-.responsive-container {
-    display: flex;
-    flex-direction: row;
-
-    @media screen and (max-width: 850px) {
-        flex-direction: column;
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    [data-reveal] {
+      animation: revealUp linear both;
+      animation-timeline: view();
+      animation-range: entry 2% cover 22%;
     }
-}
-
-.container {
-    margin: 20px;
-    padding: 20px;
-    background-color: var(--primary-light);
-    border-radius: 10px;
-    width: 45%;
-
-    @media screen and (max-width: 850px) {
-        width: calc(100% - 80px);
-    }
-}
-
-svg {
-    height: 35px;
-    width: 35px;
-}
-
-ul {
-    color: var(--off-white);
-}
-
-li {
-    margin-top: 10px;
-}
-
-.footer {
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    padding-bottom: 30px;
-    background-color: var(--off-white);
-
-    @media screen and (max-width: 850px) {
-        position: inherit;
-    }
-}
-
-/* text */
-.bold {
-    font-weight: 700;
-}
-
-.name-text {
-    padding: 20px 0 0 20px;
-    margin: 0;
-    font-size: 60px;
-    color: var(--primary-dark);
-
-    @media screen and (max-width: 550px) {
-        font-size: 50px;
-    }
-}
-
-.emphasis-text {
-    color: var(--primary-dark);
-    font-weight: bold;
-}
-
-.link {
-    color: var(--primary);
-    text-decoration: underline;
-}
-
-.link:visited {
-    color: var(--primary-dark);
-}
-
-.list-link {
-    color: var(--off-white);
-    text-decoration: underline;
-}
-
-a:hover {
-    cursor: pointer;
-}
-
-/* color */
-.off-white {
-    color: var(--off-white);
-}
-
-.off-white-fill {
-    fill: var(--off-white);
-}
-
-/* spacing */
-.row-gap-5 {
-    row-gap: 5px;
-}
-
-.col-gap-20 {
-    column-gap: 20px;
-}
-
-.p-tb-16 {
-    padding: 16px 0;
-}
-
-.m-t-0 {
-    margin-top: 0px;
-}
-
-.m-b-0 {
-    margin-bottom: 0px;
+  }
 }
